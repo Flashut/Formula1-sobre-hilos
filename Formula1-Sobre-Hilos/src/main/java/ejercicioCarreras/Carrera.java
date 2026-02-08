@@ -40,32 +40,17 @@ public class Carrera {
 //		}
 //	}
 
-//	*TODO:
-//
-//	Método que
-//	imprime el
-//	podio cuando
-//	la carrera*
-//	termina y
-//	todos los
-//	corredores ya
-//	tienen su puesto*
-//	en el
-//	podio o clasificación**/
-
 	public synchronized void imprimirPodio() {
 
 		try {
-			if (personasEnPodio != podio.length) {
+			
+			while (personasEnPodio < podio.length) {
 				wait();
 			}
 
-			else if (personasEnPodio == podio.length) {
-				notify();
-				System.out.println("Podio de la carrera: ");
-				for (int i = 0; i < podio.length; i++) {
-					System.out.println("\tLugar " + (i + 1) + " >> " + podio[i]);
-				}
+			System.out.println("Podio de la carrera: ");
+			for (int i = 0; i < podio.length; i++) {
+				System.out.println("\tLugar " + (i + 1) + " >> " + podio[i]);
 			}
 
 		} catch (InterruptedException e) {

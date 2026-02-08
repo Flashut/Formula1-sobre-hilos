@@ -6,8 +6,8 @@ public class Lanzador {
 		Coche cocheAlonso = new Coche("Alonso", 100, carrera);
 
 		// TODO: Los dos coches nuevos creados
-		Coche cocheHamilton = new Coche("Hamilton", 99, carrera);
-		Coche cocheSainz = new Coche("Sainz", 101, carrera);
+		Coche cocheHamilton = new Coche("Hamilton", 101, carrera);
+		Coche cocheSainz = new Coche("Sainz", 99, carrera);
 
 		// TODO: Son los tres threads para que realicen la salida
 		Thread thread1 = new Thread(() -> cocheAlonso.correrCarrera());
@@ -19,6 +19,8 @@ public class Lanzador {
 		thread3.start();
 
 		carrera.imprimirPodio();
+		
+		System.out.println("Carrera finalizada!!");
 	}
 
 }
