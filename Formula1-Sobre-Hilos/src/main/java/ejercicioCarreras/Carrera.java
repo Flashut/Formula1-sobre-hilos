@@ -20,11 +20,6 @@ public class Carrera {
 		this.kmTotales = kmTotales;
 	}
 
-//	public void subirAlPodio(String nombreCoche) {
-//		podio[personasEnPodio] = nombreCoche;
-//		personasEnPodio++;
-//	}
-
 	public synchronized void subirAlPodio(String nombreCoche) {
 		if (personasEnPodio < podio.length) {
 			podio[personasEnPodio] = nombreCoche;
@@ -33,17 +28,10 @@ public class Carrera {
 		}
 	}
 
-//	public void imprimirPodio() {
-//		System.out.println("Podio de la carrera: ");
-//		for (int i = 0; i < podio.length; i++) {
-//			System.out.println("\tLugar " + (i+1) + " >> " + podio[i]);
-//		}
-//	}
-
 	public synchronized void imprimirPodio() {
 
 		try {
-			
+
 			while (personasEnPodio < podio.length) {
 				wait();
 			}
